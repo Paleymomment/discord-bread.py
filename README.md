@@ -8,3 +8,6 @@ and **these modules**
 
 https://pypi.org/project/discord-webhook/
 and youll need the random module, but thats already installed
+
+
+if you are using new version, youll need pysimplegui
