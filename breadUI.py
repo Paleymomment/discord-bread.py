@@ -8,17 +8,11 @@ sg.theme('DarkGrey3')   # color (ignore the name)
 layout = [  [sg.Text('Webhook:'), sg.InputText(key='poohook')],
             [sg.Button('Send bread'), sg.Button('spam bread.')],
             [sg.Button('Github'), sg.Button('Send hot bread pics')],
+            [sg.Button('exit')],
             [sg.Text('warning: da bread.')],
             [sg.Text('Send bread: It is obvious what it does')],
             [sg.Text('Spam bread: do not press this, just dont')],
             [sg.Text('Send hot bread pics: um...you find out what it does ;)')] ]
-
-# Create the Window
-window = sg.Window('BreadHook', layout)
-event, values = window.read()
-
-
-# Main code 
 
 bread = [
 'https://media.discordapp.net/attachments/911951631342530582/912073359590846474/milk-bread.jpg?width=534&height=427',
@@ -63,35 +57,36 @@ ew = [
 
 url = 'https://github.com/Paleymomment/discord-bread.py'
 
-hm = random.choice(bread)
-bruh = random.choice(hot_bread_pics)
-eww = random.choice(ew)
-
-if event == 'Send bread':
-	webhook = DiscordWebhook(url=values['poohook'], content=hm)
-	response = webhook.execute()
-
-
-if event == 'spam bread.':
-	while True:
+# Create the Window
+window = sg.Window('BreadHook', layout)
+while True:
+	event, values = window.read()
+	if event == sg.WIN_CLOSED:
+		break
+	if event == 'Send bread':
+		hm = random.choice(bread)
 		webhook = DiscordWebhook(url=values['poohook'], content=hm)
 		response = webhook.execute()
 
-if event == 'Github':
-	webbrowser.open_new_tab(url)
+	if event == 'spam bread.':
+		while True:
+			spam = random.choice(bread)
+			webhook = DiscordWebhook(url=values['poohook'], content=spam)
+			response = webhook.execute()
+		
+
+	if event == 'Github':
+		webbrowser.open_new_tab(url)
 
 
-embed = DiscordEmbed(title=ew, description=hot_bread_pics, color='03b2f8')
+	if event == 'Send hot bread pics':
+		eww = random.choice(ew)
+		webhook = DiscordWebhook(url=values['poohook'], content=eww)
+		response = webhook.execute()
 
-if event == 'Send hot bread pics':
-	webhook = DiscordWebhook(url=values['poohook'], content=eww)
-	response = webhook.execute()
-
-if event == 'Send hot bread pics':
-	webhook = DiscordWebhook(url=values['poohook'], content=bruh)
-	response = webhook.execute()
-
-
-
+	if event == 'Send hot bread pics':
+		bruh = random.choice(hot_bread_pics)
+		webhook = DiscordWebhook(url=values['poohook'], content=bruh)
+		response = webhook.execute()
 
 window.close()
