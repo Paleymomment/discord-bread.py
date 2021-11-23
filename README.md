@@ -2,7 +2,7 @@
 crappy discord webhook bot that sends images of bread when activated, you can add more images of bread to it if you want
 for those who dont know tf is a python n shit and just want a bread webhook
 
-exe download: https://www.mediafire.com/file/42dhd1ysd7ghtuq/breadUI.exe/file
+exe download: https://www.mediafire.com/file/9w773xg3lgbs5pt/breadUI.exe/file
 
 i update this sometimes so it wont be the same
 
