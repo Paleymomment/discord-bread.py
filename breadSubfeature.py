@@ -3,6 +3,7 @@ import random
 from discord_webhook import DiscordWebhook, DiscordEmbed
 
 webhook = 'enter webhook here'
+discordToken = 'ur discord token here'
 
 bread = [
 'https://media.discordapp.net/attachments/911951631342530582/912073359590846474/milk-bread.jpg?width=534&height=427',
