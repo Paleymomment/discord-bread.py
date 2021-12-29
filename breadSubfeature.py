@@ -33,6 +33,9 @@ client = discord.Client(self_bot=True)
 @client.event
 async def on_ready():
     print('ready')
+
+@client.event
+async def on_message(message):
     if message.author == client.user:
         return
     
