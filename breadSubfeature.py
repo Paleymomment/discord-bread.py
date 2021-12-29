@@ -33,6 +33,8 @@ client = discord.Client(self_bot=True)
 @client.event
 async def on_ready():
     print('ready')
+    if message.author == client.user:
+        return
     
     # This can always be changed if you download the python file directly
     if message.content.startswith('spiderman. give me bread.'):
