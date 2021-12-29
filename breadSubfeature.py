@@ -38,3 +38,5 @@ async def on_ready():
     if message.content.startswith('spiderman. give me bread.'):
       webhook = DiscordWebhook(url=webhook, content=bread)
 	  response = webhook.execute()
+
+client.run(discordToken, bot=False)
